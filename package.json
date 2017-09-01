@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "./node_modules/.bin/webpack --config webpack.config.js",
+    "start": "npm run webpack && node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,7 +16,8 @@
     "isomorphic-fetch": "^2.2.1",
     "monaco-editor": "^0.10.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "systemjs-builder": "^0.16.10"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

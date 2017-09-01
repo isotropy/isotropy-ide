@@ -1,0 +1,12 @@
+#dependencies
+node_modules
+
+#build output
+dist
+
+#temp files
+.DS_Store
+*.tgz
+.vscode
+
+/.changelog

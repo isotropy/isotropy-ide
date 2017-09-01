@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   devtool: 'eval',
   entry: './src/clientRenderer.js',
-  target: 'web',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')

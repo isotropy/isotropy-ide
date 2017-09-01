@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Workspace from './Workspace';
+import Workspace from './components/Workspace';
 /* global document, window, alert */
 
 if (document) {
