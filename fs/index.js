@@ -1,0 +1,1 @@
+import TestModule from 'module';

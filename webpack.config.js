@@ -9,36 +9,40 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
-    modules: [
-      'node_modules'
-    ]
+    modules: ['node_modules']
   },
   node: {
-    module: "empty",
-    fs: "empty",
-    net: "empty"
+    module: 'empty',
+    fs: 'empty',
+    net: 'empty'
   },
   plugins: [
     new CopyWebpackPlugin([
       {
-          from: 'node_modules/monaco-editor/min/vs',
-          to: 'vs',
+        from: 'node_modules/monaco-editor/min/vs',
+        to: 'vs'
+      },
+      {
+        from: 'node_modules/babel-standalone/*.js',
+        to: 'babel'
       }
-    ]),
+    ])
   ],
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      exclude: [/node_modules/, /dist/],
-      use: [
-        {
-          loader: 'babel-loader',
-          query: {
-            babelrc: false,
-            presets: [['es2015', { modules: false }], 'react'],
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: [/node_modules/, /dist/],
+        use: [
+          {
+            loader: 'babel-loader',
+            query: {
+              babelrc: false,
+              presets: [['es2015', { modules: false }], 'react']
+            }
           }
-        }
-      ],
-    }]
+        ]
+      }
+    ]
   }
 };
