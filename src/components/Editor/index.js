@@ -33,10 +33,7 @@ class Editor extends React.Component {
   }
 
   onSave() {
-    const output = Babel.transform(this.currentValue, { presets: ['es2015'] })
-      .code;
-    console.log(output);
-    this.props.onTranspile(output);
+    //Figure out saving changes to file system
   }
 
   onMonacoLoaded() {

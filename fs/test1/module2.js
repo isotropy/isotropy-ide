@@ -1,9 +1,9 @@
-export default class TestModule {
+export default class TestModule2 {
   constructor() {
     this.count = 0;
   }
 
   increment() {
-    this.count++;
+    return this.count + 1;
   }
 }

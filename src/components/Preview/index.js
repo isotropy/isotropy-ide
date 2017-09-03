@@ -6,7 +6,7 @@ class Preview extends React.Component {
   }
 
   render() {
-    return <iframe src={this.props.src} />;
+    return <iframe src="./fs/index.html" />;
   }
 }
 

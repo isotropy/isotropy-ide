@@ -1,22 +1,29 @@
 import path from 'path';
-import Builder from 'systemjs-builder';
+import files from '../../fs';
 
 export default class ModuleBuilder {
   constructor() {
-    this.builder = new Builder('../../fs'); // TODO: Files from VFS fed here?
-    //new Builder('path/to/baseURL', 'path/to/system/config-file.js');
+    this.fsRoot = 'fs/';
+    SystemJS.config({
+      map: {
+        'plugin-babel': 'assets/plugin-babel/plugin-babel.js',
+        'systemjs-babel-build': 'assets/plugin-babel/systemjs-babel-browser.js'
+      },
+      packages: {
+        fs: { defaultExtension: 'js' }
+      },
+      transpiler: 'plugin-babel'
+    });
   }
 
   build() {
-    this.builder
-      .bundle('index.js', { minify: true })
-      .then(function(output) {
-        console.log(output.source); // generated bundle source
-        console.log(output.sourceMap); // generated bundle source map
-        console.log(output.modules); // array of module names defined in the bundle
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
+    files.forEach(file => {
+      if (!file.entry) {
+        return;
+      }
+      SystemJS.import(
+        `${this.fsRoot}${file.dir}${file.path}`
+      ).then(output => {});
+    });
   }
 }

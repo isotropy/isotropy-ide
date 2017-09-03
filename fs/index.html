@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<body>
+    <div id="result"></div>
+<script type="text/javascript" src="/assets/systemjs/system.js"></script>
+<script type="text/javascript">
+    SystemJS.config({
+      map: {
+        'plugin-babel': '/assets/plugin-babel/plugin-babel.js',
+        'systemjs-babel-build': '/assets/plugin-babel/systemjs-babel-browser.js'
+      },
+      packages: {
+        '/': {defaultExtension: 'js'}
+      },
+      transpiler: 'plugin-babel'
+    });
+    SystemJS.import('test1/module1.js').then((output) => {
+        console.log(output);
+    });
+</script>
+</body>
+</html>

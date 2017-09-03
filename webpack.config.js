@@ -23,8 +23,12 @@ module.exports = {
         to: 'vs'
       },
       {
-        from: 'node_modules/babel-standalone/*.js',
-        to: 'babel'
+        from: 'node_modules/systemjs/dist',
+        to: 'systemjs'
+      },
+      {
+        from: 'node_modules/plugin-babel-0.0.25',
+        to: 'plugin-babel'
       }
     ])
   ],
