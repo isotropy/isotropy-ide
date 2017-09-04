@@ -27,7 +27,7 @@ module.exports = {
         to: 'systemjs'
       },
       {
-        from: 'node_modules/plugin-babel-0.0.25',
+        from: 'node_modules/systemjs-plugin-babel',
         to: 'plugin-babel'
       }
     ])

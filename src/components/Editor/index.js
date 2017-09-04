@@ -39,7 +39,8 @@ class Editor extends React.Component {
   onMonacoLoaded() {
     window.require(['./vs/editor/editor.main'], () => {
       this.editor = monaco.editor.create(document.getElementById('container'), {
-        value: '//Try loading a package below. Click on Save for transpiling.'
+        value: '//Try loading a package below. Click on Save for transpiling.',
+        language: 'javascript'
       });
       this.onEditorMount();
     });
